@@ -8,7 +8,36 @@
 </head>
 <body>
 
-<%= yield %>
+<%#= render 'layouts/header' %>
+
+	<div id="container">
+		<div id="user_nav">
+			<% if user_signed_in? %>
+				Signed in as <strong><%= current.user.email %></strong>.
+				<%= link_to 'Edit profile', edit_user_registration_path %> |
+				<%= link_to 'Sign out', destroy_user_session_path, 
+						method: :delete %>
+			<% else %>
+				<%= link_to 'Sign up', new_user_registration_path %> |
+				<%= link_to 'Login', new_user_session_path %>
+			<% end %>
+		</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+
+		<div class="spann10 offset2">
+			<% flash.each do |key, value| %>
+				<div class="alert-alert-<%= key %>"><%= value %></div>
+			<% end %>
+
+			<%= yield %>
+		
+		</div>
+	</div>
+</div>
+
+
 
 </body>
 </html>
