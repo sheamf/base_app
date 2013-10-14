@@ -6,6 +6,7 @@ gem 'jquery-rails' #bundles jquery, jquery-ui, jquery-ujs
 gem 'jquery-ui-rails' #recommended by jquery-rails README
 gem 'devise'
 gem 'bootstrap-sass', '~> 2.3.2.1'
+gem 'thin'
 #gem 'faker', '1.1.2'
 #gem 'will_paginate', '3.0.4'
 #gem 'bootstrap-will_paginate', '0.0.9'
